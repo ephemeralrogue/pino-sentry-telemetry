@@ -1,0 +1,26 @@
+{
+  "name": "@ephemeralrogue/pino-sentry-telemetry",
+  "version": "1.0.0",
+  "description": "pino logging for local development and sentry log consumption for production",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "pino",
+    "logging"
+  ],
+  "author": "ephemeralrogue <ephemeralrogue@proton.me>",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/node": "^7.70.0",
+    "dotenv": "^16.4.7",
+    "pino": "^9.5.0",
+    "pino-sentry-transport": "^1.4.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^13.0.0"
+  }
+}
