@@ -95,7 +95,7 @@ export default function (dsn, options) {
         },
     
         flush() { logger.flush(); }
-    }
+    };
     
     initializeSentryIO(dsn);
 
