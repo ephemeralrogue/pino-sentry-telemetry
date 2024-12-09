@@ -4,6 +4,11 @@
   "description": "pino logging for local development and sentry log consumption for production",
   "main": "src/app.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ephemeralrogue/pino-sentry-telemetry"
+  },
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint"
