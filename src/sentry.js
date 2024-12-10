@@ -1,31 +1,54 @@
 import {
 	init,
-	Integrations,
+	httpIntegration,
+    mongoIntegration,
 	rewriteFramesIntegration
 } from '@sentry/node';
-import Log from './logger.js';
+import { nodeProfilingIntegration } from '@sentry/profiling-node';
+import esMain from 'es-main';
 
 // Sentry setup
-export default function initializeSentryIO(dsn) {
+export default async function initializeSentryIO(dsn) {
+
+    const root = esMain(import.meta);
+    console.log(root);
+    
     try {
-        const root = new URL('./', import.meta.url);
+
+        // const root = new URL('./', import.meta.url);
+
         init({
             dsn: dsn,
-            tracesSampleRate: 1.0,
             environment: process.env.NODE_ENV,
+            defaultIntegrations: false,
             integrations: [
+                httpIntegration({
+                    tracing: true
+                }),
+                mongoIntegration({
+                    tracing: true
+                }),
+                nodeProfilingIntegration,
                 rewriteFramesIntegration({
                     root: root,
-                }),
-                new Integrations.Http({
-                    tracing: true
                 })
-            ]
+            ],
+            tracesSampleRate: 1.0,
+            profilesSampleRate: 1.0,
+            registerEsmLoaderHooks: {
+                onlyIncludeInstrumentedModules: true,
+            },
         });
+        console.log('sentry success');
+
     } catch(error) {
-        Log.error(
+        
+        // eslint-disable-next-line no-console
+        console.error(
             error,
             'Error initializing Sentry transport'
         );
+
     }
+
 }
