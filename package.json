@@ -1,6 +1,6 @@
 {
   "name": "@ephemeralrogue/pino-sentry-telemetry",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "pino logging for local development and sentry log consumption for production",
   "main": "src/app.js",
   "type": "module",
