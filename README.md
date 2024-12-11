@@ -15,13 +15,13 @@ your sentry `dsn` and pino options into the exported `pinoInit` function:
 ```
 // logger.js
 
-import pinoInit from '@ephemeralrogue/pino-sentry-telemetry';  
+import pinoSentryInit from '@ephemeralrogue/pino-sentry-telemetry';  
 
 const options = {  
     // set your pino options here  
 }  
 
-const Log = pinoInit(dsn, options);  
+const Log = pinoSentryInit(dsn, options);  
 
 export default Log;  
 ```
