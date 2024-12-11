@@ -1,6 +1,6 @@
 {
   "name": "@ephemeralrogue/pino-sentry-telemetry",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "pino logging for local development and sentry log consumption for production",
   "main": "src/app.js",
   "type": "module",
@@ -20,7 +20,8 @@
   "author": "ephemeralrogue <ephemeralrogue@proton.me>",
   "license": "MIT",
   "dependencies": {
-    "@sentry/node": "^7.70.0",
+    "@sentry/node": "^8.42.0",
+    "@sentry/profiling-node": "^8.42.0",
     "dotenv": "^16.4.7",
     "pino": "^9.5.0",
     "pino-sentry-transport": "^1.4.0"
