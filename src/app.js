@@ -1,3 +1,3 @@
-import pinoInit from './logger.js';
+import pinoSentryInit from './logger.js';
 
-export default pinoInit;
+export default pinoSentryInit;

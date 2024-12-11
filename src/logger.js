@@ -33,7 +33,7 @@ function setTransport(dsn) {
     
 }
 
-export default function pinoInit(dsn, options) {
+export default function pinoSentryInit(dsn, options) {
 
     initializeSentryIO(dsn);
 
